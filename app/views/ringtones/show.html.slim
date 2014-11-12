@@ -1,14 +1,21 @@
-.small-12.columns
+head
+  javascript:
+    setTimeout(function(){
+    window.location.reload(1);
+    }, 10000)
 
-  - if @ringtone.processing?
-    div The ringtone is still processsing.
-    /need to put in part so that it refreshes after ringtone has finished loading
-  - else
-    h2 = @ringtone.name
+body
+  .small-12.columns
 
-    div = render partial: "audio", locals: { ringtone: @ringtone }
+    - if @ringtone.processing?
+      div The ringtone is still processsing.
+    - else
+      h2 = @ringtone.name
 
-    h3 Formats
-    ul
-      li = link_to "Android", @ringtone.url(:android)
-      li = link_to "iPhone", @ringtone.url(:iphone)
+      div = render partial: "audio", locals: { ringtone: @ringtone }
+
+      h3 Formats
+      ul
+        li = link_to "Android", @ringtone.url(:android)
+        li = link_to "iPhone", @ringtone.url(:iphone)
+
