@@ -1,12 +1,14 @@
 .small-12.columns
   h2 Create a new ringtone
 
-  p The first 30 seconds of your source file will be converted to a ringtone.
+  p 30 seconds of your source file will be converted to a ringtone from the start time you specify.
 
   = simple_form_for @ringtone do |f|
     = f.input :song
     = f.input :artist
     = f.input :source, label: "Ringtone source file"
-    = f.input :start_time
-    = f.input :end_time
-    = f.button :submit, class: "radius"
+    .small-2.columns
+      = f.input :start_time
+      = f.input :end_time
+    .small-12.columns
+      = f.button :submit, class: "radius"
