@@ -2,7 +2,8 @@ class Ringtone < ActiveRecord::Base
   validates :song, presence: true
 
   has_attached_file :source
-  validates_attachment_content_type :source, :content_type => /\Aaudio\/(x-)?(mpeg|mp3|m4a|aac|mp2|wav|wma|ogg)/
+  validates_attachment_content_type :source, :content_type => /\Aaudio\/(x-)?(mpeg|mp3)/
+  #|m4a|aac|mp2|wav|wma|ogg
 
   has_attached_file :ringtone,
                     :styles => { android: { format: :mp3 },
