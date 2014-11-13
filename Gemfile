@@ -45,6 +45,9 @@ gem "sinatra"
 gem "flutie"
 gem "foreman", require: false
 
+source "https://rubygems.org"
+gem 'delayed_paperclip'
+
 gem "quiet_assets", group: :development
 group :development, :test do
   gem "better_errors"

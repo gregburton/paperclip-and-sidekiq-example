@@ -11,6 +11,6 @@ class Background < ActiveRecord::Base
                                         :small => "320x480#",
                                         :thumb => "160x240#"}
   validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
-
+  process_in_background :image, :only_process => [:iphone5, :iphone6, :iphone7, :huge, :medium]
   delegate :url, to: :image
 end
